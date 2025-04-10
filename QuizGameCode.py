@@ -10,7 +10,7 @@ import os
 # 3) not ask the same question twice (pull questions from bag)
 # 4) add function (maybe choosing the question our of a bag)
 
-Points = 5
+Points = 0
 CorrectAwnserPoints = 1
 keepplaying = 0
 running = True
