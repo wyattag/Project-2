@@ -10,11 +10,13 @@ import os
 # 3) not ask the same question twice (pull questions from bag)
 # 4) add function (maybe choosing the question our of a bag)
 
+name = input("what is your name?")
 Points = 0
 CorrectAwnserPoints = 1
 keepplaying = 0
 running = True
-
+def: greet(name):
+    print("Hello, {name}!")
 QuestionArray = [
     "What is the tallest animal in the world?",
     "Which bird doesn't fly?",
