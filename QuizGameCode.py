@@ -35,7 +35,7 @@ AnswerArray = ["C", "B", "A", "B", "C"]
 WhilePlaying = True
 
 positiveresponseArray = ["that's amazing!", "that's great!", "good job!","wow!"]
-negitiveresponseArray = ["too bad"," better shot next time", "you tried","you're a failure"]
+negitiveresponseArray = ["too bad"," better shot next time", "you tried","Almost!"]
 def timeout():
     print("time ran out,",negitiveresponseArray[random.randint(0,3)]," score:", Points)                     #change when adding more negitive responses 
     os._exit(0)
