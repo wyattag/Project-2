@@ -95,6 +95,7 @@ while running:
         if keepPlaying == "Y":
             print("Next round starting...")
             WhilePlaying = True
+            break
         else:
             print(random.choice(positiveResponseArray), "Your final score:", Points)
             WhilePlaying = False
