@@ -1,22 +1,20 @@
-# initialization
 import random
 import time
 import threading
 import os
 
-# To Do List:
-# 1) Implement giving score based on time remaining
-# 2) Add more questions & answers  
-# 3) not ask the same question twice (pull questions from bag)
-# 4) add function (maybe choosing the question our of a bag)
-
-name = input("what is your name?")
+# Variables
+name = input("What is your name? ")
 Points = 0
 CorrectAwnserPoints = 1
-keepplaying = 0
+keepPlaying = 0
 running = True
-def: greet(name):
-    print("Hello, {name}!")
+
+# Greeting function
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Arrays
 QuestionArray = [
     "What is the tallest animal in the world?",
     "Which bird doesn't fly?",
@@ -36,67 +34,70 @@ ChoicesArray = [
 AnswerArray = ["C", "B", "A", "B", "C"]
 
 usedQuestions = []
-
-
 WhilePlaying = True
 
-positiveresponseArray = ["that's amazing!", "that's great!", "good job!","wow!"]
-negitiveresponseArray = ["too bad"," better shot next time", "you tried","Almost!"]
+positiveResponseArray = ["That's amazing!", "That's great!", "Good job!", "Wow!"]
+negativeResponseArray = ["Too bad", "Better shot next time", "You tried", "Almost!"]
+
+# Timeout function
 def timeout():
-    print("time ran out,",negitiveresponseArray[random.randint(0,3)]," score:", Points)                     #change when adding more negitive responses 
+    print("Time ran out,", random.choice(negativeResponseArray), "Score:", Points)
     os._exit(0)
 
+# Get unused question
 def getQuestion():
-    askedQuestions = 0
-    questionNum = random.randint(0,4)    
-    for askedQuestions in usedQuestions:
-        if questionNum != usedQuestions:
-            break
-        else:
-            
-    
+    while True:
+        questionNum = random.randint(0, len(QuestionArray) - 1)
+        if questionNum not in usedQuestions:
+            usedQuestions.append(questionNum)
+            return questionNum
 
-#Start
-print("Welcome to our game")
-print("Answer the questions to earn points. There are 5 points and 5 questions you will have a time limit to answer each question. If you enter an incorrect answer time will be deducted. The amount of time you will have resets at the start of the new question")
-while running == True:
+# Start
+print("Welcome to our game!")
+print("Answer the questions to earn points. You have 20 seconds per question. Faster answers earn more points!")
+
+greet(name)
+
+while running:
     fiveQuestionLoop = 1
-    while WhilePlaying == True:
-        Timer = threading.Timer(20, timeout)
-        Timer.start()
+    usedQuestions = []  # Reset for each round
+    WhilePlaying = True
+
+    while WhilePlaying:
         while fiveQuestionLoop <= 5:
-            QuestionNum = random.randint(0,4)                                             #change when adding more questions
-            print("#",fiveQuestionLoop,")",QuestionArray[QuestionNum], fiveQuestionLoop)
-            print(ChoicesArray[QuestionNum])
+            questionNum = getQuestion()
+
+            print(f"\n#{fiveQuestionLoop}) {QuestionArray[questionNum]}")
+            print(ChoicesArray[questionNum])
+
+            Timer = threading.Timer(20, timeout)
+            Timer.start()
+
+            startTime = time.time()
             userInput = input("Your answer: ").upper()
-            if userInput == AnswerArray[QuestionNum]:
-                Points += 1
-                print("Correct Awnser")
-            elif userInput != AnswerArray[QuestionNum]:
-                print("try again")
+            Timer.cancel()
+            timeTaken = time.time() - startTime
+
+            if userInput == AnswerArray[questionNum]:
+                if timeTaken < 5:
+                    Points += 3
+                elif timeTaken < 10:
+                    Points += 2
+                else:
+                    Points += 1
+                print("Correct Answer,", random.choice(positiveResponseArray))
+            else:
+                print("Wrong Answer,", random.choice(negativeResponseArray))
+
             fiveQuestionLoop += 1
-        Timer.cancel()
-        break
-    
-    
-    #timeLeft = threading.Timer
-    #if timeLeft == time.time:
-    #    CorrectAwnserPoints += 3
-    #elif timeLeft == 6:
-    #    CorrectAwnserPoints += 2
-    #Points += CorrectAwnserPoints
-    #CorrectAwnserPoints = 1
-    Timer.cancel()
-    keepplaying = input("do you want to continue? Y or N") 
-    if keepplaying == "Y":
-        print("Next question:")
-        WhilePlaying == True
-    elif keepplaying == "y":
-        print("Next question:")
-        WhilePlaying == True
-    else:
-        print(positiveresponseArray[random.randint(0,3)], "You're score:",Points)                     #change when adding new positive responses 
-        WhilePlaying == False
-        running == False
-        print("Thanks for playing!")
-        break
+
+        keepPlaying = input("\nDo you want to continue? Y or N: ").upper()
+        if keepPlaying == "Y":
+            print("Next round starting...")
+            WhilePlaying = True
+        else:
+            print(random.choice(positiveResponseArray), "Your final score:", Points)
+            WhilePlaying = False
+            running = False
+            print("Thanks for playing!")
+            break
