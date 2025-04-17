@@ -20,7 +20,14 @@ QuestionArray = [
     "Which bird doesn't fly?",
     "Which animal lives underwater?",
     "What is the largest planet in our solar system?",
-    "Which gas do plants absorb from the air?"
+    "Which gas do plants absorb from the air?",
+    "What is the capital of France?",
+    "Who wrote Romeo and Juliet?",
+    "How many legs does a spider have?",
+    "How many continents are there on Earth?",
+    "Which ocean in the largest?",
+    "What planet is closest to the sun?",
+    "How many sides does a hexagon have?"
 ]
 
 ChoicesArray = [
@@ -28,10 +35,17 @@ ChoicesArray = [
     "A: Toyota Camry, B: Penguin, C: Seagull",
     "A: Jellyfish, B: Deer, C: Triceratops",
     "A: Earth, B: Jupiter, C: Mars",
-    "A: Oxygen, B: Nitrogen, C: Carbon Dioxide"
+    "A: Oxygen, B: Nitrogen, C: Carbon Dioxide",
+    "A: Madrid, B: Paris, C: Rome",
+    "A: William Shakespeare, B: Charles Dickens, C: Mark Twain",
+    "A: 6, B: 8, C: 10",
+    "A: 5, B: 8, C: 7",
+    "A: Atlantic, B: Pacific, C: Indian",
+    "A: Mercury, B: Venus, C: Mars",
+    "A: 5, B: 6, C:8"
 ]
 
-AnswerArray = ["C", "B", "A", "B", "C"]
+AnswerArray = ["C", "B", "A", "B", "C", "B", "A", "B", "C","B", "A","B"]
 
 usedQuestions = []
 WhilePlaying = True
