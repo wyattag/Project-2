@@ -9,6 +9,7 @@ Points = 0
 CorrectAwnserPoints = 1
 keepPlaying = 0
 running = True
+WhilePlaying = True
 
 # Greeting function
 def greet(name):
@@ -48,7 +49,6 @@ ChoicesArray = [
 AnswerArray = ["C", "B", "A", "B", "C", "B", "A", "B", "C","B", "A","B"]
 
 usedQuestions = []
-WhilePlaying = True
 
 positiveResponseArray = ["That's amazing!", "That's great!", "Good job!", "Wow!"]
 negativeResponseArray = ["Too bad", "Better shot next time", "You tried", "Almost!"]
@@ -67,10 +67,12 @@ def getQuestion():
             return questionNum
 
 # Start
+greet(name)
 print("Welcome to our game!")
 print("Answer the questions to earn points. You have 20 seconds per question. Faster answers earn more points!")
+print("Press any key to start playing!")
 
-greet(name)
+
 
 while running:
     fiveQuestionLoop = 1
