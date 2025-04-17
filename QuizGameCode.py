@@ -2,7 +2,7 @@ import random
 import time
 import threading
 import os
-
+import keyboard
 # Variables
 name = input("What is your name? ")
 Points = 0
@@ -90,7 +90,8 @@ while running:
             Timer.start()
 
             startTime = time.time()
-            userInput = input("Your answer: ").upper()
+            userInput = keyboard.wait("Your answer: ")
+            
             Timer.cancel()
             timeTaken = time.time() - startTime
 
