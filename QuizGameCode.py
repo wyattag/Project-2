@@ -32,21 +32,21 @@ QuestionArray = [
 ]
 
 ChoicesArray = [
-    "A: Bear, B: Ant, C: Giraffe",
-    "A: Toyota Camry, B: Penguin, C: Seagull",
-    "A: Jellyfish, B: Deer, C: Triceratops",
-    "A: Earth, B: Jupiter, C: Mars",
-    "A: Oxygen, B: Nitrogen, C: Carbon Dioxide",
-    "A: Madrid, B: Paris, C: Rome",
-    "A: William Shakespeare, B: Charles Dickens, C: Mark Twain",
-    "A: 6, B: 8, C: 10",
-    "A: 5, B: 8, C: 7",
-    "A: Atlantic, B: Pacific, C: Indian",
-    "A: Mercury, B: Venus, C: Mars",
-    "A: 5, B: 6, C:8"
+    "1: Bear, 2: Ant, 3: Giraffe",
+    "1: Toyota Camry, 2: Penguin, 3: Seagull",
+    "1: Jellyfish, 2: Deer, 3: Triceratops",
+    "1: Earth, 2: Jupiter, 3: Mars",
+    "1: Oxygen, 2: Nitrogen, 3: Carbon Dioxide",
+    "1: Madrid, 2: Paris, 3: Rome",
+    "1: William Shakespeare, 2: Charles Dickens, 3: Mark Twain",
+    "1: 6, 2: 8, 3: 10",
+    "1: 5, 2: 8, 3: 7",
+    "1: Atlantic, 2: Pacific, 3: Indian",
+    "1: Mercury, 2: Venus, 3: Mars",
+    "1: 5, 2: 6, 3:8"
 ]
 
-AnswerArray = ["C", "B", "A", "B", "C", "B", "A", "B", "C","B", "A","B"]
+AnswerArray = ["3", "2", "1", "2", "3", "2", "1", "2", "3","2", "1","2"]
 
 usedQuestions = []
 
