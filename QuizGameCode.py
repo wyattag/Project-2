@@ -90,7 +90,7 @@ while running:
             Timer.start()
 
             startTime = time.time()
-            userInput = keyboard.wait("Your answer: ")
+            userInput = keyboard.wait("a")
             
             Timer.cancel()
             timeTaken = time.time() - startTime
