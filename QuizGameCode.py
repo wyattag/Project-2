@@ -71,6 +71,7 @@ greet(name)
 print("Welcome to our game!")
 print("Answer the questions to earn points. You have 20 seconds per question. Faster answers earn more points!")
 print("Press any key to start playing!")
+input("press enter to start")
 
 
 
